@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Xậy dựng lớp Date</title>
+</head>
+<body>
+    <script>
+        let MyDate = function(day,month,year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+            
+            this.getDay = function(){
+                return this.day;
+            }
+            this.getMonth = function(){
+                return this.month;
+            }
+            this.getYear = function(){
+                return this.year;
+            }
+
+            this.setDay = function(d){
+                this.day = d;
+            }
+            this.setMonth = function(m){
+                this.month=m;
+                
+            }
+            this.setYear = function(y){
+                this.year = y;
+                
+            }
+
+        }
+
+        class YourDate {
+            day;
+            month;
+            year;
+            constructor (day, month,year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay(){
+                if (this.day < 10){
+                    this.day = "0" + this.day;
+                    return this.day
+                }
+                return this.day;
+            }
+            getMonth(){
+                if (this.month <10) {
+                   this.month = '0'+this.month;
+                   return this.month;
+                }
+                return this.month;
+            
+            }
+            getYear(){
+                return this.year;
+            }
+            setDay(d){
+                this.day = d;
+            }
+            setMonth(m){
+                this.month = m;
+
+            }
+            setYear(y){
+                this.year = y;
+            }
+            toString(){
+               return this.day +"/"+ this.month +"/"+ this.year;
+            }
+
+
+        }
+
+        let date1 = new YourDate(20,3,2021);
+        console.log(date1.getDay()) ;
+        console.log(date1.getMonth());
+        console.log(date1.getYear());
+        console.log(date1.toString());
+        date1.setDay(1);
+        date1.setMonth(1);
+        date1.setYear(2021);
+        console.log(`${date1.getDay()}/${date1.getMonth()}/${date1.getYear()}`);
+    
+
+       console.log(date1.toString());
+       
+
+    </script>
+</body>
+</html>
